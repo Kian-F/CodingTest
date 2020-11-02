@@ -1,0 +1,39 @@
+<%= flash[:notice] %>
+<div>
+  <h4>Import data!</h4>
+  <%= form_tag import_people_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import from file" %>
+  <% end %>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Species</th>
+      <th>Gender</th>
+      <th>Affiliations</th>
+      <th>Weapon</th>
+      <th>Vehicle</th>
+      
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.Name %></td>
+        <td><%= person.Location %></td>
+        <td><%= person.Species %></td>
+        <td><%= person.Gender %></td>
+        <td><%= person.Affiliations %></td>
+        <td><%= person.Weapon %></td>
+        <td><%= person.Vehicle %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

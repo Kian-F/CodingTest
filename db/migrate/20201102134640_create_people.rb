@@ -3,7 +3,7 @@ class CreatePeople < ActiveRecord::Migration[6.0]
     create_table :people do |t|
       t.string :Name
       t.string :Location
-      t.String :Species
+      t.string :Species
       t.string :Gender
       t.string :Affiliations
       t.string :Weapon

@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "people#index"
+  get 'people/index'
+  get 'people/import' => 'people#my_import'
+
+  resources :people do
+    collection {post :import}
+end
 end
