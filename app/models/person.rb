@@ -5,7 +5,7 @@ class Person < ApplicationRecord
     require 'csv'
     require 'activerecord-import/base'
     require 'activerecord-import/active_record/adapters/postgresql_adapter'
-
+    paginates_per 10
   
 
     def self.my_import(file)

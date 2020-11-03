@@ -9,6 +9,8 @@
     <%= submit_tag "Import from file" %>
   <% end %>
 </div>
+<br>
+<%=  paginate @people %>
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
@@ -38,3 +40,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @people%>
