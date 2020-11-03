@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'activerecord-import'
 gem 'postgresql', '~> 1.0'
+# gem 'bootstrap', '~> 4.5.3'
+gem 'bootstrap', '~> 4.0.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

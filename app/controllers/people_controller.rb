@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   def index
     @people = Person.all
-    render :json => @people
+    # render :json => @people
   end
 
   def import
