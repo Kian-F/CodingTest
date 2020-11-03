@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   root to: "people#index"
   get 'people/index'
   get 'people/import' => 'people#my_import'
-  
+ 
+  get '/search' , to: "people#search"
+  #get '/search' => 'people#search', :as => 'search_page'
   resources :people do
     collection {post :import}
   

@@ -4,9 +4,9 @@ class LocationsController < ApplicationController
   end
 
   
-  def import
-    Location.my_import(params[:file])
-    redirect_to location_url, notice: "Successfuly Imported Data!"
-  end
+  # def import
+  #   Location.my_import(params[:file])
+  #   redirect_to locations_url, notice: "Successfuly Imported Data!"
+  # end
 
 end
