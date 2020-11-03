@@ -10,7 +10,7 @@ class PeopleController < ApplicationController
 
   def import
     Person.my_import(params[:file])
-    Location.my_import(params[:file])
+    #Location.my_import(params[:file])
     redirect_to root_url, notice: "Successfuly Imported Data!"
   end
 

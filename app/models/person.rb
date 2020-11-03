@@ -1,6 +1,7 @@
 class Person < ApplicationRecord
-    has_many :locations
-    has_many :Affiliation
+    require 'active_support/core_ext/string/inflections'
+    belongs_to :locations
+    belongs_to :Affiliation
     validates :Name, :Location, :Species, :Gender, :Affiliations, presence: true
     require 'csv'
     require 'activerecord-import/base'
@@ -11,7 +12,7 @@ class Person < ApplicationRecord
     def self.my_import(file)
        
         people = []
-        CSV.foreach(file.path, headers: true) do |row|
+        CSV.parse(file.path, headers: true)  do |row|
             people << Person.new(row.to_h) unless row["Affiliations"].nil?
             
         end
