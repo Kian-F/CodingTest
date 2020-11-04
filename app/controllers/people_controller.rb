@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  
+  # helper_method :sort_column, :sort_direction
 
   def index
     @people = Person.page(params[:page]).order(params[:sort])
@@ -22,3 +22,9 @@ class PeopleController < ApplicationController
    end
 end
 
+# def sort_column
+#   params[:sort] || "name"
+# end
+# def sort_direction
+#   params[:direction] || "asc"
+# end
