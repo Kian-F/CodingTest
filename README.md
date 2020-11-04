@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+----
+# Coding Test
 
-Things you may want to cover:
+## Table of Contents
+- Introduction
+- Screenshots
+- Technologies
+- Gems
 
-* Ruby version
+# Introduction
+This app help the user to upload a CSV file and import the data into a database.
 
-* System dependencies
+## Screenshots
 
-* Configuration
+#### Home
+![Home page](/app/assets/images/Home.JPG)
+#### Search
+![Search](/app/assets/images/Search.JPG)
 
-* Database creation
+## How to get started
+### Feel free to clone this repository.
 
-* Database initialization
+To run locally, run the following in the root directory in the terminal:
+1. bundle install
+2. rails db:create
+3. rails db:migrate
+4. rails s
 
-* How to run the test suite
+## Gems
+ . activerecord-import
+ . postgresql
+ . bootstrap
+ . kaminari
 
-* Services (job queues, cache servers, search engines, etc.)
+----
 
-* Deployment instructions
-
-* ...
