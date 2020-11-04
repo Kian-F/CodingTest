@@ -6,7 +6,6 @@
 ## Table of Contents
 - Introduction
 - Screenshots
-- Technologies
 - Gems
 
 # Introduction
