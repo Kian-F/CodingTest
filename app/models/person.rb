@@ -10,15 +10,7 @@ class Person < ApplicationRecord
     attr_accessor :my_csv_file
     validates :my_csv_file, :csv => true
   
-    def self.to_csv(options = {})
-        CSV.generate(options) do |csv|
-            csv << column_names
-            all.each do |contact|
-                csv << contact.attributes.values_at(*column_names)
-            end
-        end
-      end
-      
+
     def self.my_import(file)
        
         people = []
