@@ -17,7 +17,7 @@ class PeopleController < ApplicationController
     
     # if params[:q].blank?  
     #   redirect_to(search_url, alert: "Empty field!") and return  
-     @people = Person.where("name LIKE? OR location LIKE? OR species LIKE? OR gender LIKE? OR affiliations LIKE? OR weapon LIKE? OR vehicle LIKE? ","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%")
-    
+     @people = Person.where("name LIKE? OR location LIKE? OR species LIKE? OR gender LIKE? OR affiliations LIKE? OR weapon LIKE? OR vehicle LIKE? ","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%").page(params[:page])
+     
    end
  end
