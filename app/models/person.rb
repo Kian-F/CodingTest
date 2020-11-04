@@ -11,18 +11,12 @@ class Person < ApplicationRecord
   
 
     def self.my_import(file)
-       
         people = []
         allowed_attributes =["Name", "Locations", "Species", "Gender", "Affiliations"]
         CSV.parse(file.path, headers: true)  do |row|
             people << Person.new(row.to_h) unless row["Affiliations"].nil?
-            
         end
         Person.import people, recursive: true
     end 
-
-
-
-
 end
 

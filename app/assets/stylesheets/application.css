@@ -15,5 +15,9 @@
  */
 
  .paginationNav{
-     margin: 10px;
+     margin-left: 10px;
+ }
+
+ .import{
+     margin-left: 10px;
  }

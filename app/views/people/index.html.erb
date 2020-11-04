@@ -3,41 +3,43 @@
 
 <%= flash[:notice] %>
 <div>
-  <h4 class="">Import Data!</h4>
-  <%= form_tag import_people_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import from file" %>
-  <% end %>
+    <h5 class="alert alert-primary" role="alert">Import Data!</h5>
+    <div class="import">
+        <%= form_tag import_people_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import from file" %>
+        <% end %>
+    </div>
 </div>
 <br>
 <%=  paginate @people %>
 <table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-        <th><%= link_to " Name", :sort => "name"%></th>
-      <th scope="col"><%= link_to " Location", :sort => "location"%></th>
-      <th scope="col"><%= link_to " Species", :sort => "species"%></th>
-      <th scope="col"><%= link_to " Gender", :sort => "gender"%></th>
-      <th scope="col"><%= link_to " Affiliations", :sort => "affiliations"%></th>
-      <th scope="col"><%= link_to " Weapon", :sort => "weapon"%></th>
-      <th scope="col"><%= link_to " Vehicle", :sort => "vehicle"%></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @people.each do |person| %>
-      <tr>
-      <% x=1%>
-        <th scope="row"></th>
-        <td><%= person.Name.titleize %></td>
-        <td><%= person.Location.titleize %></td>
-        <td><%= person.Species %></td>
-        <td><%= person.Gender %></td>
-        <td><%= person.Affiliations %></td>
-        <td><%= person.Weapon %></td>
-        <td><%= person.Vehicle %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col"><%= link_to " Name", :sort => "name"%></th>
+            <th scope="col"><%= link_to " Location", :sort => "location"%></th>
+            <th scope="col"><%= link_to " Species", :sort => "species"%></th>
+            <th scope="col"><%= link_to " Gender", :sort => "gender"%></th>
+            <th scope="col"><%= link_to " Affiliations", :sort => "affiliations"%></th>
+            <th scope="col"><%= link_to " Weapon", :sort => "weapon"%></th>
+            <th scope="col"><%= link_to " Vehicle", :sort => "vehicle"%></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @people.each do |person| %>
+        <tr>
+
+            <th scope="row"></th>
+            <td><%= person.Name.titleize %></td>
+            <td><%= person.Location.titleize %></td>
+            <td><%= person.Species %></td>
+            <td><%= person.Gender %></td>
+            <td><%= person.Affiliations %></td>
+            <td><%= person.Weapon %></td>
+            <td><%= person.Vehicle %></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 <%= paginate @people%>
