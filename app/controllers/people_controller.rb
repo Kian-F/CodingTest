@@ -1,9 +1,8 @@
 class PeopleController < ApplicationController
+  
+
   def index
     @people = Person.page(params[:page])
-    # @people = Person.search(params[:search])
-    
-
     # render :json => @people
   end
  
@@ -15,6 +14,9 @@ class PeopleController < ApplicationController
   end
 
   def search
-    @people = Person.where("name LIKE?","%"  + params[:q] + "%")
+    # if params[:search].blank?  
+    #   redirect_to(root_path, alert: "Empty field!") and return  
+     @people = Person.where("name LIKE? OR location LIKE? OR species LIKE? OR gender LIKE? OR affiliations LIKE? OR weapon LIKE? OR vehicle LIKE? ","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%","%"  + params[:q].downcase + "%")
+    
   end
 end

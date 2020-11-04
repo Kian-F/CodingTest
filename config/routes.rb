@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   #get '/search' => 'people#search', :as => 'search_page'
   resources :people do
     collection {post :import}
+    post 'filter', on: :collection
   
 end
 resources :locations do

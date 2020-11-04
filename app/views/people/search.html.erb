@@ -1,4 +1,32 @@
 <h1>Search Result</h1>
-<% @people.each do |person| %>  
-        <%= person.Name %><br>  
+
+<%= paginate @people%>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Species</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Affiliations</th>
+      <th scope="col">Weapon</th>
+      <th scope="col">Vehicle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+      <% x=1%>
+        <th scope="row"></th>
+        <td><%= person.Name.titleize %></td>
+        <td><%= person.Location.titleize %></td>
+        <td><%= person.Species %></td>
+        <td><%= person.Gender %></td>
+        <td><%= person.Affiliations %></td>
+        <td><%= person.Weapon %></td>
+        <td><%= person.Vehicle %></td>
+      </tr>
     <% end %>
+  </tbody>
+</table>
