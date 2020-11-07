@@ -21,15 +21,15 @@ def self.my_import(file)
     CSV.foreach(file.path,{:headers => true, :encoding => 'ISO-8859-1'} ) do |row|
         names = row["Name"].split
         if names.length() == 3
-        row["First_Name"] = names[0].concat(' ').concat(names[1])
-        row["Last_Name"] = names[2]
+        row["First"] = names[0].concat(' ').concat(names[1])
+        row["Last"] = names[2]
         elsif names.length() == 2
-        row["First_Name"] = names[0]
-        row["Last_Name"] = names[1]   
+        row["First"] = names[0]
+        row["Last"] = names[1]   
         elsif names.length() == 1
-        row["First_Name"] = names[0]
+        row["First"] = names[0]
     end
-        people << Person.new(row.to_h) unless row["Affiliations"].nil? and row["Name"].another_titlecase
+        people << Person.new(row.to_h) unless row["Affiliations"].nil? and row["Name"]
 end   
     Person.import people, recursive: true
 end 

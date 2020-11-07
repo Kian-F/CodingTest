@@ -34,7 +34,7 @@
 
             <th scope="row"></th>
             <td><%= person.Name.upcase_first %></td>
-            <td><%= person.First.upcase_first %></td>
+            <td><%= person.First.upcase_first unless person.First.nil? %></td>
             <td><%= person.Last.titleize unless person.Last.nil? %></td>
             <td><%= person.Location.titleize %></td>
             <td><%= person.Species %></td>
