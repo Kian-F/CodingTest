@@ -2,14 +2,14 @@ class PeopleController < ApplicationController
   # helper_method :sort_column, :sort_direction
 
   def index
-    @people = Person.page(params[:page]).order(params[:sort])
+      @people = Person.page(params[:page]).order(params[:sort])
     # render :json => @people
+    # @people = Person.all
   end
  
 
   def import
     Person.my_import(params[:file])
-    #Location.my_import(params[:file])
     redirect_to root_url, notice: "Successfuly Imported Data!"
   end
 

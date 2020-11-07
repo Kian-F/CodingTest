@@ -12,12 +12,14 @@
     </div>
 </div>
 <br>
-<%=  paginate @people %>
+        <%=  paginate @people %>
 <table class="table table-striped">
     <thead class="thead-dark">
      <tr>
             <th scope="col">#</th>
-            <th scope="col"><%= link_to " Name", :sort => "name"%></th>
+            <th scope="col"><%= link_to " Name", :sort => "name"%></th> 
+            <th scope="col"><%= link_to " First", :sort => "first"%></th>
+            <th scope="col"><%= link_to " Last_Name", :sort => "last_name"%></th>
             <th scope="col"><%= link_to " Location", :sort => "location"%></th>
             <th scope="col"><%= link_to " Species", :sort => "species"%></th>
             <th scope="col"><%= link_to " Gender", :sort => "gender"%></th>
@@ -31,7 +33,9 @@
         <tr>
 
             <th scope="row"></th>
-            <td><%= person.Name.titleize %></td>
+            <td><%= person.Name.upcase_first %></td>
+            <td><%= person.First.upcase_first %></td>
+            <td><%= person.Last_Name %></td>
             <td><%= person.Location.titleize %></td>
             <td><%= person.Species %></td>
             <td><%= person.Gender %></td>
@@ -42,4 +46,3 @@
         <% end %>
     </tbody>
 </table>
-<%= paginate @people%>
