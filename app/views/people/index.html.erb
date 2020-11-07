@@ -19,7 +19,7 @@
             <th scope="col">#</th>
             <th scope="col"><%= link_to " Name", :sort => "name"%></th> 
             <th scope="col"><%= link_to " First", :sort => "first"%></th>
-            <th scope="col"><%= link_to " Last_Name", :sort => "last_name"%></th>
+            <th scope="col"><%= link_to " Last", :sort => "last"%></th>
             <th scope="col"><%= link_to " Location", :sort => "location"%></th>
             <th scope="col"><%= link_to " Species", :sort => "species"%></th>
             <th scope="col"><%= link_to " Gender", :sort => "gender"%></th>
@@ -35,7 +35,7 @@
             <th scope="row"></th>
             <td><%= person.Name.upcase_first %></td>
             <td><%= person.First.upcase_first %></td>
-            <td><%= person.Last_Name %></td>
+            <td><%= person.Last.titleize unless person.Last.nil? %></td>
             <td><%= person.Location.titleize %></td>
             <td><%= person.Species %></td>
             <td><%= person.Gender %></td>
