@@ -6,9 +6,9 @@ require 'activerecord-import/base'
 require 'activerecord-import/active_record/adapters/postgresql_adapter'
 paginates_per 10
 
-    def another_titlecase
-        self.split(" ").collect{|word| word[0] = word[0].upcase; word}.join(" ") unless word[0] == word[0].upcase   
-    end
+    # def another_titlecase
+    #     self.split(" ").collect{|word| word[0] = word[0].upcase; word}.join(" ") unless word[0] == word[0].upcase   
+    # end
     # def titleize
     #     nocaps = "-"
     #     self.split(" ").map { |word| nocaps.include?(word) ? word : word.capitalize }.join(" ")
