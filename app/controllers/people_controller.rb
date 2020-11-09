@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   # helper_method :sort_column, :sort_direction
 
+# Index page show the import result in root page
   def index
       @people = Person.page(params[:page]).order(params[:sort])
     # render :json => @people
@@ -13,8 +14,8 @@ class PeopleController < ApplicationController
     redirect_to root_url, notice: "Successfuly Imported Data!"
   end
 
-  def search
-    
+  # Search function 
+  def search 
     # if params[:q].blank?  
     #   redirect_to(search_path, alert: "Empty field!") and return  
     

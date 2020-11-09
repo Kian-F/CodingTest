@@ -13,9 +13,9 @@ paginates_per 10
     #     nocaps = "-"
     #     self.split(" ").map { |word| nocaps.include?(word) ? word : word.capitalize }.join(" ")
     # end
-      
+    
+# Function for importing the CSV file   
 def self.my_import(file)
-   
     people = []
     allowed_attributes =["Name", "Location", "Species", "Gender", "Affiliations"]
     CSV.foreach(file.path,{:headers => true, :encoding => 'ISO-8859-1'} ) do |row|
@@ -29,8 +29,8 @@ def self.my_import(file)
         elsif names.length() == 1
         row["First"] = names[0]
     end
-        people << Person.new(row.to_h) unless row["Affiliations"].nil? and row["Name"]
+        people << Person.new(row.to_h) unless row["Affiliations"].nil?
 end   
     Person.import people, recursive: true
-end 
+ end 
 end
