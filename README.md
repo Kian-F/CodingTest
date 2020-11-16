@@ -28,10 +28,10 @@ To run locally, run the following in the root directory in the terminal:
 4. rails s
 
 ## Gems
- . activerecord-import
- . postgresql
- . bootstrap
- . kaminari
+ - activerecord-import
+ - postgresql
+ - bootstrap
+ - kaminari
 
 ----
 
